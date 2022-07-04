@@ -1,4 +1,5 @@
 import { useState } from "react";
+import BlogList from "./BlogList";
 
 const Home = () => {
     const [blogs, setBlogs] = useState([
@@ -9,14 +10,7 @@ const Home = () => {
     
     return (
         <div className="home">
-            {blogs.map((post) => (
-                // The Id must be unique for each post otherwise
-                // whatever we are trying to do, won't work.
-                <div className="post-preview" key={post.id}>
-                    <h2>{post.title}</h2>
-                    <p>Written by: {post.author}</p>
-                </div>
-            ))}
+            <BlogList blogs={blogs} title="All Blogs"/>
         </div> 
     );
 }
